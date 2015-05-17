@@ -39,12 +39,9 @@ function godiff_fun(subDir)
         'img.change'
     };
 
-    outFile = 'imgdiff.csv';
-
     % This function overwrites exiting files.
     %write_csv_headers(outFile, headers);
 
-    fid = fopen(outFile, 'a');
 
     dirPath = [imgsDir subDir];
 
@@ -163,6 +160,11 @@ function godiff_fun(subDir)
         error('AH');
 
     end
+    
+    
+    outFile = [int2str(session) '_imgdiff.csv'];
+    
+    fid = fopen(outFile, 'a');
 
     for r = 1:length(rounds)
 
