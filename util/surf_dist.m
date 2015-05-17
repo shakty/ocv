@@ -27,6 +27,10 @@ if nargin<3, bestN = 30; end
   % Sort matches on vector distance
   err = sort(err);
   
+  if (bestN > length(err))
+      bestN = length(err);
+  end
+  
   errN = sum(err(1:bestN));
   totErr = sum(err);
 
